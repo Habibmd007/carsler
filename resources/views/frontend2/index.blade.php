@@ -74,39 +74,43 @@
              <div class="row under">
 
                  <div class="col-md-4 right">
-                    <div class="shop">
-                        <div class="shop-img">
-                            <img src="{{asset('/')}}frontend/img/shop02.png" alt="" height="148">
-                        </div>
-                        <div class="shop-body">
-                            <h3>Car<br>Service</h3>
-                        </div>
-                    </div>
+                    <a href="#">
+                      <div class="shop">
+                          <div class="shop-img">
+                              <img src="{{asset('/')}}frontend/img/shop02.png" alt="" height="148">
+                          </div>
+                          <div class="shop-body">
+                              <h3>Car<br>Service</h3>
+                          </div>
+                      </div>
+                    </a>
                  </div>
                  <div class="col-md-4 right">
-                    <div class="shop">
-                        <div class="shop-img">
-                            <img src="http://localhost/carsaler/public/new/./img/shop03.png" alt="" height="148">
-                        </div>
-                        <div class="shop-body">
-                            <h3>Accessories</h3>
-                        </div>
-                    </div>
-                 </div>
-                 <div class="col-md-4 right">
-                    <div class="shop">
-                        <div class="shop-img">
-                            <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
-                        </div>
-                        <div class="shop-body">
-                            <h3>Car<br>Rental</h3>
-                        </div>
-                    </div>
+                    <a href="#">
+                      <div class="shop">
+                          <div class="shop-img">
+                              <img src="http://localhost/carsaler/public/new/./img/shop03.png" alt="" height="148">
+                          </div>
+                          <div class="shop-body">
+                              <h3>Accessories</h3>
+                          </div>
+                      </div>
+                    </a>
                  </div>
 
+                 <div class="col-md-4 right">
+                    <a href="#">
+                      <div class="shop">
+                          <div class="shop-img">
+                              <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                          </div>
+                          <div class="shop-body">
+                              <h3>Car<br>Rental</h3>
+                          </div>
+                      </div>
+                    </a>
+                 </div>
              </div>
-              
-            
               {{--  =====//=shop box under slider=========  --}}
 
 
@@ -114,31 +118,37 @@
 
               {{--  <!-- side dbox right -->  --}}
               <div class="col-md-2 section shop-md-2">
-     
-                 <div class="shop">
-                     <div class="shop-img">
-                         <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
-                     </div>
-                     <div class="shop-body">
-                         <h3>Traffic<br>Update</h3>
-                     </div>
-                 </div>
-                 <div class="shop">
-                     <div class="shop-img">
-                         <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
-                     </div>
-                     <div class="shop-body">
-                         <h3>Hire<br>a Driver</h3>
-                     </div>
-                 </div>
-                 <div class="shop">
-                     <div class="shop-img">
-                         <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
-                     </div>
-                     <div class="shop-body">
-                         <h3>Hire<br>a Car</h3>
-                     </div>
-                 </div>
+                  <a href="http://">
+                    <div class="shop">
+                        <div class="shop-img">
+                            <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                        </div>
+                        <div class="shop-body">
+                            <h3>Traffic<br>Update</h3>
+                        </div>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <div class="shop">
+                        <div class="shop-img">
+                            <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                        </div>
+                        <div class="shop-body">
+                            <h3>Hire<br>a Driver</h3>
+                        </div>
+                    </div>
+                  </a>
+
+                  <a href="#">
+                    <div class="shop">
+                        <div class="shop-img">
+                            <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                        </div>
+                        <div class="shop-body">
+                            <h3>Hire<br>a Car</h3>
+                        </div>
+                    </div>
+                  </a>
                </div>
              <!--// side dbox right-->
         </div> <!---row --->

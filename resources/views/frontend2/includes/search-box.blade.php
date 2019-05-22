@@ -30,16 +30,17 @@
 
             
                  <!-- ==========car Tab====================== -->
-                 <div class="tab-pane active" id="car">
+                 <div class="tab-pane  active" id="car">
                    <i class="fa fa-car" aria-hidden="true"></i>
                     <form action="" method="post">
 
                           <!-- ============Location================== -->
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
+                            <div class="col-md-6 ">
+                                <div class="form-group ">
                                 <label for="">State</label>
                                 <select name="state" id="my-input" class="form-control">
+                                  <option value="">Select State</option>
                                   <option value="">Dhaka</option>
                                   <option>Chitagong</option>
                                   <option>Sylhet</option>
@@ -51,6 +52,7 @@
                                 <div class="form-group">
                                 <label for="">City</label>
                                 <select name="state" id="my-input" class="form-control">
+                                  <option value="">Select City</option>
                                   <option value="">Dhaka</option>
                                   <option>Chitagong</option>
                                   <option>Sylhet</option>

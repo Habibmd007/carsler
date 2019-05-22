@@ -19,6 +19,10 @@
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
   <!-- CSS Files -->
   <style>
       #filter{
@@ -53,7 +57,7 @@
         }
 
         .shop .shop-body h3 {
-            color: #FFF;
+            color: #000;
             font-weight: 500;
         }
 
@@ -64,13 +68,13 @@
             bottom: 0;
             left: 0px;
             width: 60%;
-            background: #D10024;
+            background: #FFC300;
             opacity: 0.7;
             -webkit-transform: skewX(-45deg);
             -ms-transform: skewX(-45deg);
             transform: skewX(-45deg);
         }
-
+       
         .shop:after {
             content: "";
             position: absolute;
@@ -78,7 +82,7 @@
             bottom: 0;
             left: 1px;
             width: 100%;
-            background: #D10024;
+            background: #FFC300;
             opacity: 0.7;
             -webkit-transform: skewX(-45deg) translateX(-100%);
             -ms-transform: skewX(-45deg) translateX(-100%);
@@ -95,8 +99,30 @@
         .under .col-md-4{
             max-width: 37%;
         }
+
+
+        {{--  tab search  --}}
+        .col-md-4 .card-nav-tabs{
+          margin-top: 60px; 
+        }
+        .col-md-4 .card-nav-tabs label{
+          color: #fff;
+        }
+        .col-md-4 .card-nav-tabs .form-control{
+          color: #fff;
+          background: #6433827d;
+        }
+
+
+        {{--  =======news letter=========  --}}
+        #colorlib-subscribe {
+          background: #FFC300;
+          position: relative;
+          padding: 3em;
+      }
        
     </style>
+    <link href="{{asset('/')}}frontend/css/my.css" rel="stylesheet" />
   <link href="{{asset('/')}}frontend/css/material-kit.css?v=2.0.5" rel="stylesheet" />
 </head>
 
@@ -180,6 +206,149 @@
                 }
             
               </script>
+
+              {{--  =========card slider=========  --}}
+              
+              <script>
+                  
+          $(document).ready(function() {
+              $("#news-slider").owlCarousel({
+                  items : 2,
+                  itemsDesktop : [1199,2],
+                  itemsMobile : [600,1],
+                  pagination :true,
+                  autoPlay : true
+              });
+              
+              $("#news-slider2").owlCarousel({
+                  items:3,
+                  itemsDesktop:[1199,2],
+                  itemsDesktopSmall:[980,2],
+                  itemsMobile:[600,1],
+                  pagination:false,
+                  navigationText:false,
+                  autoPlay:true
+              });
+              
+              $("#news-slider3").owlCarousel({
+                  items:3,
+                  itemsDesktop:[1199,2],
+                  itemsDesktopSmall:[1000,2],
+                  itemsMobile:[700,1],
+                  pagination:false,
+                  navigationText:false,
+                  autoPlay:true
+              });
+              
+              $("#news-slider4").owlCarousel({
+                  items:3,
+                  itemsDesktop:[1199,3],
+                  itemsDesktopSmall:[1000,2],
+                  itemsMobile:[600,1],
+                  pagination:false,
+                  navigationText:false,
+                  autoPlay:true
+              });
+              
+              $("#news-slider5").owlCarousel({
+                  items:3,
+                  itemsDesktop:[1199,3],
+                  itemsDesktopSmall:[1000,2],
+                  itemsMobile:[650,1],
+                  pagination:false,
+                  navigationText:false,
+                  autoPlay:true
+              });
+              
+              $("#news-slider6").owlCarousel({
+                  items : 3,
+                  itemsDesktop:[1199,3],
+                  itemsDesktopSmall:[980,2],
+                  itemsMobile : [600,1],
+                  pagination:false,
+                  navigationText:false
+              });
+              
+              $("#news-slider7").owlCarousel({
+                  items : 3,
+                  itemsDesktop : [1199,3],
+                  itemsDesktopSmall : [1000,2],
+                  itemsMobile : [650,1],
+                  pagination :false,
+                  autoPlay : true
+              });
+              
+              $("#news-slider8").owlCarousel({
+                  items : 3,
+                  itemsDesktop:[1199,3],
+                  itemsDesktopSmall:[980,2],
+                  itemsMobile : [600,1],
+                  autoPlay:true
+              });
+              
+              $("#news-slider9").owlCarousel({
+                  items : 3,
+                  itemsDesktop:[1199,2],
+                  itemsDesktopSmall:[980,2],
+                  itemsTablet:[650,1],
+                  pagination:false,
+                  navigation:true,
+                  navigationText:["",""]
+              });
+              
+              $("#news-slider10").owlCarousel({
+                  items : 4,
+                  itemsDesktop:[1199,3],
+                  itemsDesktopSmall:[980,2],
+                  itemsMobile : [600,1],
+                  navigation:true,
+                  navigationText:["",""],
+                  pagination:true,
+                  autoPlay:true
+              });
+              
+              $("#news-slider11").owlCarousel({
+                  items : 4,
+                  itemsDesktop:[1199,3],
+                  itemsDesktopSmall:[980,2],
+                  itemsMobile : [600,1],
+                  pagination:true,
+                  autoPlay:true
+              });
+              
+              $("#news-slider12").owlCarousel({
+                  items : 2,
+                  itemsDesktop:[1199,2],
+                  itemsDesktopSmall:[980,1],
+                  itemsTablet: [600,1],
+                  itemsMobile : [550,1],
+                  pagination:true,
+                  autoPlay:true
+              });
+              
+              $("#news-slider13").owlCarousel({
+                  navigation : false,
+                  pagination : true,
+                  items : 3,
+                  itemsDesktop:[1199,3],
+                  itemsDesktopSmall:[980,2],
+                  itemsMobile : [600,1],
+                  navigationText : ["",""]
+              });
+              
+              $("#news-slider14").owlCarousel({
+                  items : 4,
+                  itemsDesktop:[1199,3],
+                  itemsDesktopSmall:[980,2],
+                  itemsMobile : [550,1],
+                  pagination:false,
+                  autoPlay:true
+              });
+          });
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script> 
+
+              {{--  ========//card slider==========  --}}
   </div><!-- #app -->
 </body>
 
