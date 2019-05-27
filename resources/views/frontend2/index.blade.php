@@ -2,170 +2,171 @@
 
 @section('title', app_name() . ' | ' . __('navs.general.home'))
 
-@section('content')
-<div class=" header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('{{asset('/')}}frontend/img/bg2.jpg');">
-    <div class="container">
-      <div class="row">
+@section('banner')
+<div class="container">
+    <div class="row">
 
-        <!-- search-box -->
-            @include('frontend2.includes.search-box')
-        <!--// search-box -->
-
+      <!-- search-box -->
+          @include('frontend2.includes.box-menu')
+      <!--// search-box -->
 
 
 
-        <div class="col-md-6 section">
-                      <!--         carousel  -->
-            <div class="" id="carousel">
-                <div class="container">
-                  <div class="row">
-                    <div class=" mr-auto ml-auto">
-                      <!-- Carousel Card -->
-                      <div class="card card-raised card-carousel">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-                          <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                          </ol>
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img class="d-block w-100" src="{{asset('/')}}frontend/img/bg2.jpg" alt="First slide">
-                              <div class="carousel-caption d-none d-md-block">
-                                <h4>
-                                  <i class="material-icons">location_on</i> Yellowstone National Park, United States
-                                </h4>
-                              </div>
-                            </div>
-                            <div class="carousel-item">
-                              <img class="d-block w-100" src="{{asset('/')}}frontend/img/bg3.jpg" alt="Second slide">
-                              <div class="carousel-caption d-none d-md-block">
-                                <h4>
-                                  <i class="material-icons">location_on</i> Somewhere Beyond, United States
-                                </h4>
-                              </div>
-                            </div>
-                            <div class="carousel-item">
-                              <img class="d-block w-100" src="{{asset('/')}}frontend/img/bg.jpg" alt="Third slide">
-                              <div class="carousel-caption d-none d-md-block">
-                                <h4>
-                                  <i class="material-icons">location_on</i> Yellowstone National Park, United States
-                                </h4>
-                              </div>
+
+      <div class="col-md-6 section">
+                    <!--         carousel  -->
+          <div class="" id="carousel">
+              <div class="container">
+                <div class="row">
+                  <div class=" mr-auto ml-auto">
+                    <!-- Carousel Card -->
+                    <div class="card card-raised card-carousel">
+                      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img class="d-block w-100" src="{{asset('/')}}frontend/img/bg2.jpg" alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h4>
+                                <i class="material-icons">location_on</i> Yellowstone National Park, United States
+                              </h4>
                             </div>
                           </div>
-                          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <i class="material-icons">keyboard_arrow_left</i>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <i class="material-icons">keyboard_arrow_right</i>
-                            <span class="sr-only">Next</span>
-                          </a>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="{{asset('/')}}frontend/img/bg3.jpg" alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h4>
+                                <i class="material-icons">location_on</i> Somewhere Beyond, United States
+                              </h4>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="{{asset('/')}}frontend/img/bg.jpg" alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h4>
+                                <i class="material-icons">location_on</i> Yellowstone National Park, United States
+                              </h4>
+                            </div>
+                          </div>
                         </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                          <i class="material-icons">keyboard_arrow_left</i>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                          <i class="material-icons">keyboard_arrow_right</i>
+                          <span class="sr-only">Next</span>
+                        </a>
                       </div>
-                      <!-- End Carousel Card -->
                     </div>
+                    <!-- End Carousel Card -->
                   </div>
                 </div>
               </div>
-              <!--         end carousel -->
-              {{--  ======shop box under slider=========  --}}
-             <div class="row under">
+            </div>
+            <!--         end carousel -->
+            {{--  ======shop box under slider=========  --}}
+           <div class="row under">
 
-                 <div class="col-md-4 right">
-                    <a href="#">
-                      <div class="shop">
-                          <div class="shop-img">
-                              <img src="{{asset('/')}}frontend/img/shop02.png" alt="" height="148">
-                          </div>
-                          <div class="shop-body">
-                              <h3>Car<br>Service</h3>
-                          </div>
-                      </div>
-                    </a>
-                 </div>
-                 <div class="col-md-4 right">
-                    <a href="#">
-                      <div class="shop">
-                          <div class="shop-img">
-                              <img src="http://localhost/carsaler/public/new/./img/shop03.png" alt="" height="148">
-                          </div>
-                          <div class="shop-body">
-                              <h3>Accessories</h3>
-                          </div>
-                      </div>
-                    </a>
-                 </div>
-
-                 <div class="col-md-4 right">
-                    <a href="#">
-                      <div class="shop">
-                          <div class="shop-img">
-                              <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
-                          </div>
-                          <div class="shop-body">
-                              <h3>Car<br>Rental</h3>
-                          </div>
-                      </div>
-                    </a>
-                 </div>
-             </div>
-              {{--  =====//=shop box under slider=========  --}}
-
-
-            </div><!---col-md-6--->
-
-              {{--  <!-- side dbox right -->  --}}
-              <div class="col-md-2 section shop-md-2">
-                  <a href="http://">
-                    <div class="shop">
-                        <div class="shop-img">
-                            <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
-                        </div>
-                        <div class="shop-body">
-                            <h3>Traffic<br>Update</h3>
-                        </div>
-                    </div>
-                  </a>
+               <div class="col-md-4 right">
                   <a href="#">
                     <div class="shop">
                         <div class="shop-img">
-                            <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                            <img src="{{asset('/')}}frontend/img/shop02.png" alt="" height="148">
                         </div>
                         <div class="shop-body">
-                            <h3>Hire<br>a Driver</h3>
-                        </div>
-                    </div>
-                  </a>
-
-                  <a href="#">
-                    <div class="shop">
-                        <div class="shop-img">
-                            <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
-                        </div>
-                        <div class="shop-body">
-                            <h3>Hire<br>a Car</h3>
+                            <h3>Car<br>Service</h3>
                         </div>
                     </div>
                   </a>
                </div>
-             <!--// side dbox right-->
-        </div> <!---row --->
+               <div class="col-md-4 right">
+                  <a href="#">
+                    <div class="shop">
+                        <div class="shop-img">
+                            <img src="http://localhost/carsaler/public/new/./img/shop03.png" alt="" height="148">
+                        </div>
+                        <div class="shop-body">
+                            <h3>Accessories</h3>
+                        </div>
+                    </div>
+                  </a>
+               </div>
 
-         
+               <div class="col-md-4 right">
+                  <a href="#">
+                    <div class="shop">
+                        <div class="shop-img">
+                            <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                        </div>
+                        <div class="shop-body">
+                            <h3>Car<br>Rental</h3>
+                        </div>
+                    </div>
+                  </a>
+               </div>
+           </div>
+            {{--  =====//=shop box under slider=========  --}}
 
-      </div>
+
+          </div><!---col-md-6--->
+
+            {{--  <!-- side dbox right -->  --}}
+            <div class="col-md-2 section shop-md-2">
+                <a href="http://">
+                  <div class="shop">
+                      <div class="shop-img">
+                          <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                      </div>
+                      <div class="shop-body">
+                          <h3>Traffic<br>Update</h3>
+                      </div>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="shop">
+                      <div class="shop-img">
+                          <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                      </div>
+                      <div class="shop-body">
+                          <h3>Hire<br>a Driver</h3>
+                      </div>
+                  </div>
+                </a>
+
+                <a href="#">
+                  <div class="shop">
+                      <div class="shop-img">
+                          <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                      </div>
+                      <div class="shop-body">
+                          <h3>Hire<br>a Car</h3>
+                      </div>
+                  </div>
+                </a>
+             </div>
+           <!--// side dbox right-->
+      </div> <!---row --->
+
+       
+
     </div>
-  </div>
+    
+@endsection
+
+@section('content')
+
+  {{--  </div>  --}}
 
 
 
      {{--  ========main-content================  --}}
-      <div class="main main-raised">
-            @include('frontend2.includes.main-content')
-      </div>
-      {{--  ========//main-content================  --}}
+          @include('frontend2.includes.main-content')
+     {{--  ========//main-content================  --}}
     </div>
   </div>
 

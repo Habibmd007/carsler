@@ -14,6 +14,14 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 
+// ====Post routes============
+Route::group(['prefix' => 'post'], function () {
+    
+    Route::get('/posts/{id}', 'PostController@index')->name('index');
+    Route::get('/create/{id}', 'PostController@create')->name('create');
+    Route::get('/show/{id}', 'PostController@show')->name('show');
+});
+
 /*
  * These frontend controllers require the user to be logged in
  * All route names are prefixed with 'frontend.'

@@ -14,7 +14,7 @@
                       <a class="nav-link" href="#bike" data-toggle="tab"> <i class="fa fa-motorcycle"></i> Bike</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#rickshaw" data-toggle="tab"> <img src="{{asset('/')}}frontend/carbody/rickshaw.svg" alt="" height="15"> Rickshaw</a>
+                      <a class="nav-link " href="#rickshaw" data-toggle="tab"> <img  src="{{asset('/')}}frontend/carbody/rickshaw.svg" alt="" height="15"> Rickshaw</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#bicycle" data-toggle="tab"> <i class="fa fa-bicycle"></i> Bicycle</a>

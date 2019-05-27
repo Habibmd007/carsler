@@ -22,7 +22,10 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
-
+{{-- ========single page slider============ --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
+{{-- ========single page slider============ --}}
   <!-- CSS Files -->
   <style>
       #filter{
@@ -101,6 +104,14 @@
         }
 
 
+        {{--  Left box menu  --}}
+        .col-md-4 .left-box{
+          margin-top: 60px;
+        }
+        .col-md-4 .left-box  .left{
+          margin-left: -55px; 
+        }
+
         {{--  tab search  --}}
         .col-md-4 .card-nav-tabs{
           margin-top: 60px; 
@@ -113,13 +124,36 @@
           background: #6433827d;
         }
 
-
-        {{--  =======news letter=========  --}}
-        #colorlib-subscribe {
-          background: #FFC300;
-          position: relative;
-          padding: 3em;
-      }
+{{-- ===========SINGLE PAGE SLIDER====== --}}
+.swiper-container {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+.gallery-top {
+  height: 80%;
+  width: 100%;
+}
+.gallery-thumbs {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.gallery-thumbs .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-active {
+  opacity: 1;
+}
+{{-- ===========SINGLE PAGE SLIDER====== --}}
+     
        
     </style>
     <link href="{{asset('/')}}frontend/css/my.css" rel="stylesheet" />
@@ -137,7 +171,16 @@
         
   {{--  ==============//=Nav=============            --}}
         @include('includes.partials.messages')
-        @yield('content')
+
+        {{--  bannr  --}}
+        <div class=" header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('{{asset('/')}}frontend/img/bg2.jpg');">
+          @yield('banner')
+        </div>
+        {{--  bannr  --}}
+
+        <div class="main main-raised">
+            @yield('content')
+        </div>
               
               <footer class="footer" data-background-color="black">
                 <div class="container">
@@ -345,6 +388,27 @@
                   autoPlay:true
               });
           });
+
+
+          {{-- ========single page slider=========== --}}
+                  var galleryTop = new Swiper('.gallery-top', {
+                      spaceBetween: 10,
+                      navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                      },
+                    });
+                    var galleryThumbs = new Swiper('.gallery-thumbs', {
+                      spaceBetween: 10,
+                      centeredSlides: true,
+                      slidesPerView: 'auto',
+                      touchRatio: 0.2,
+                      slideToClickedSlide: true,
+                    });
+                    galleryTop.controller.control = galleryThumbs;
+                    galleryThumbs.controller.control = galleryTop;
+
+          {{-- ========single page slider=========== --}}
         </script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script> 
 
