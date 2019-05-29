@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 class PostController extends Controller
 {
@@ -20,6 +21,16 @@ class PostController extends Controller
     }
 
   
+    public function selectModel(Request $request)
+    {
+        // return 'ok';
+        $models= DB::table('models')->where('make_id', $request->id )->get();
+        foreach( $models as  $model){
+            echo' <option value=" '.$model->id.' "> '.$model->title.'</option>';
+        }
+       
+    }
+
     public function store(Request $request)
     {
         return $request;

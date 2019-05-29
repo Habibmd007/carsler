@@ -4,14 +4,12 @@
 <div style="height:200px"></div>
 @endsection
 
-<script>
-        function bType(v){
-            $('#body-type').val(v);
-        }
-</script>
+
 
 
 @section('content')
+<input type="hidden" id="csrftoken" name="_token" value="{{ csrf_token() }}">
+
 <div class="container" >
     <div class="row">
         <div class="col-md-5">
@@ -107,14 +105,17 @@
                         @php
                             $makes= DB::table('makes')->get();
                         @endphp
-                        <select id="my-select" class="form-control" name="make">
+
+                        <select onchange="cmodel(this.value)" id="my-select model-select" class="form-control" name="make">
                             <option value="">Make</option>
                             @foreach ($makes as $make)
-                                <option value="{{$make->title}}">{{$make->title}}</option>
+                                <option value="{{$make->id}}">{{$make->title}}</option>
                             @endforeach
                         </select>
+
                     </div>
                     </div>
+
                     {{-- =======Model========== --}}
                     <div class="form-group bmd-form-group">
                     <div class="input-group">
@@ -123,14 +124,10 @@
                             <i class="fa fa-delicious" aria-hidden="true"></i>
                         </span>
                         </div>
-                        @php
-                            $models= DB::table('models')->where('make_code', )->get();
-                        @endphp
-                        <select id="my-select" class="form-control" name="model">
+                       
+                        <select id="model-select" class="form-control" name="model">
                             <option>Select Model</option>
-                            @foreach ($models as $model)
-                            <option value="{{$model->title}}">{{$model->title}}</option>
-                            @endforeach
+                           
                         </select>
                     </div>
                     </div>
@@ -142,11 +139,7 @@
                             <i class="fa fa-object-group" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select id="my-select" class="form-control" name="style">
-                            <option>Version/style</option>
-                            <option>bmw</option>
-                            <option>bmw</option>
-                        </select>
+                        <input type="text" name="" id="" class="form-control" placeholder="Version/Style">
                     </div>
                     </div>
                     {{-- =======Transmission========== --}}
@@ -159,8 +152,12 @@
                         </div>
                         <select id="my-select" class="form-control" name="transmission">
                             <option>Transmission</option>
-                            <option>bmw</option>
-                            <option>bmw</option>
+                            <option value="Automanual">Automanual</option>
+                            <option value="Automatic">Automatic</option>
+                            <option value="CVT ">CVT</option>
+                            <option value="Manual">Manual</option>
+                            <option value="Other">Other</option>
+                            
                         </select>
                     </div>
                     </div>
@@ -173,11 +170,7 @@
                             <i class="fa fa-road" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select id="my-select" class="form-control" name="mileage">
-                            <option>Mileage</option>
-                            <option>bmw</option>
-                            <option>bmw</option>
-                        </select>
+                        <input type="number" name="mileage" id="" step="10000" class="form-control" placeholder="Mileage">
                     </div>
                     </div>
                     {{-- =======Exterior Color========== --}}
@@ -190,8 +183,21 @@
                         </div>
                         <select id="my-select" class="form-control" name="out-color">
                             <option>Exterior Color</option>
-                            <option>bmw</option>
-                            <option>bmw</option>
+                            <option  value="Beige">Beige</option>
+                            <option value="Black">Black</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Green">Green</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Red">Red</option>
+                            <option value="Silver">Silver</option>
+                            <option value="White">White</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     </div>
@@ -204,10 +210,23 @@
                         </span>
                         </div>
                         <select id="my-select" class="form-control" name="in-color">
-                            <option>Interior Color</option>
-                            <option>bmw</option>
-                            <option>bmw</option>
-                        </select>
+                                <option>Exterior Color</option>
+                                <option  value="Beige">Beige</option>
+                                <option value="Black">Black</option>
+                                <option value="Blue">Blue</option>
+                                <option value="Brown">Brown</option>
+                                <option value="Gold">Gold</option>
+                                <option value="Gray">Gray</option>
+                                <option value="Green">Green</option>
+                                <option value="Orange">Orange</option>
+                                <option value="Pink">Pink</option>
+                                <option value="Purple">Purple</option>
+                                <option value="Red">Red</option>
+                                <option value="Silver">Silver</option>
+                                <option value="White">White</option>
+                                <option value="Yellow">Yellow</option>
+                                <option value="Other">Other</option>
+                            </select>
                     </div>
                     </div>
                     {{-- =======Number of Doors========== --}}
@@ -218,13 +237,10 @@
                             <i class="fa fa-window-close" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select id="my-select" class="form-control" name="doors">
-                            <option>Number of Doors</option>
-                            <option>bmw</option>
-                            <option>bmw</option>
-                        </select>
+                        <input type="number" name="door" id=""  class="form-control" placeholder="Door">
                     </div>
                     </div>
+
                     {{-- =======Engine Cylinder========== --}}
                     <div class="form-group bmd-form-group">
                     <div class="input-group">
@@ -233,11 +249,8 @@
                                 <i class="fa fa-cogs" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select id="my-select" class="form-control" name="cylinder">
-                            <option>Engine Cylinder</option>
-                            <option>bmw</option>
-                            <option>bmw</option>
-                        </select>
+                        <input type="number" name="Cylinder" id=""  class="form-control" placeholder="Cylinders">
+
                     </div>
                     </div>
                     {{-- =======Drive Type========== --}}
@@ -250,8 +263,12 @@
                         </div>
                         <select id="my-select" class="form-control" name="drive-type">
                             <option>Drive Type</option>
-                            <option>bmw</option>
-                            <option>bmw</option>
+                            <option value="awd">AWD</option>
+                            <option value="fwd">FWD</option>
+                            <option value="rwd">RWD</option>
+                            <option value="rwd">4x2/2-wheel drive</option>
+                            <option value="rwd">4x4/4-wheel drive</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                     </div>
@@ -646,4 +663,33 @@
 
     </div>
 </div>
+
+<script>
+        function bType(v){
+            $('#body-type').val(v);
+        }
+
+
+        {{-- =======car model========== --}}
+        function cmodel(val){
+                var iie= val;
+                    $.ajax({
+                        type:"POST",
+                        url:'http://localhost/carsler-2/public/post/selectModel',
+                        data: {
+                            id: iie,
+                            _token: $('#csrftoken').val(),
+                        },
+                        dataType: "html",
+                        success: function(response) {
+                        $('#model-select').html(response);
+                        console.log(response);
+                            
+                        }
+                    })
+
+            }
+    
+        {{-- =======car model========== --}}
+</script>
 @endsection
