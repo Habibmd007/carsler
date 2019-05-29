@@ -20,6 +20,7 @@ Route::group(['prefix' => 'post'], function () {
     Route::get('/posts/{id}', 'PostController@index')->name('index');
     Route::get('/create/{id}', 'PostController@create')->name('create');
     Route::get('/show/{id}', 'PostController@show')->name('show');
+    Route::post('/save/{id}', 'PostController@store')->name('save');
 });
 
 /*

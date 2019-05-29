@@ -178,7 +178,7 @@
         </div>
         {{--  bannr  --}}
 
-        <div class="main main-raised">
+        <div class="main main-raised" style="background:#9c27b070">
             @yield('content')
         </div>
               
