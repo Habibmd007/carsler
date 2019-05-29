@@ -33,6 +33,21 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'body-type'     => 'required',
+            'make'          => 'required',
+            'model'         => 'required',
+            'transmission' => 'required',
+            'mileage'        => 'required',
+            'out-color'     => 'required',
+            'in-color'       => 'required',
+            'door'           => 'required',
+            'Cylinder'       => 'required',
+            'drive-type'    => 'required',
+            'fuel-type'      => 'required',
+            'price'          => 'required',
+        ]);
+
         return $request;
     }
 

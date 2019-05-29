@@ -8,11 +8,17 @@
 
 
 @section('content')
-<input type="hidden" id="csrftoken" name="_token" value="{{ csrf_token() }}">
+<input  required type="hidden" id="csrftoken" name="_token" value="{{ csrf_token() }}">
+
+
+
 
 <div class="container" >
     <div class="row">
         <div class="col-md-5">
+
+
+
             {{-- ======body type========== --}}
             <div class="card">
                 <div class="card-body">
@@ -69,12 +75,24 @@
                             <a href="javascript:void(0)" onclick="bType(this.id)" id="wagons" class="dropdown-item">
                                 <img class=" material-icons" src="{{asset('/')}}frontend/carbody/wagons.svg" alt="" height="100"> wagons
                             </a>
+
+                            <a href="javascript:void(0)" onclick="bType(this.id)" id="other" class="dropdown-item">
+                                 Other
+                            </a>
                         </div>
 
                     </li>
                 </div>
             </div>
 
+
+
+
+
+
+
+
+            {{--  =====Form start=============  --}}
             <form action="{{route('frontend.save','id')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 
@@ -90,7 +108,7 @@
                                     <i class="fa fa-car" aria-hidden="true"></i>
                                 </span>
                             </div>
-                            <input id="body-type" name="body-type" type="text" class="form-control" placeholder="body type" readonly>
+                            <input id="body-type" name="body-type" type="text" class="form-control" placeholder="body type" readonly required>
                         </div>
                     </div>
 
@@ -106,7 +124,7 @@
                             $makes= DB::table('makes')->get();
                         @endphp
 
-                        <select onchange="cmodel(this.value)" id="my-select model-select" class="form-control" name="make">
+                        <select required  onchange="cmodel(this.value)" id="my-select model-select" class="form-control" name="make">
                             <option value="">Make</option>
                             @foreach ($makes as $make)
                                 <option value="{{$make->id}}">{{$make->title}}</option>
@@ -125,7 +143,7 @@
                         </span>
                         </div>
                        
-                        <select id="model-select" class="form-control" name="model">
+                        <select required  id="model-select" class="form-control" name="model">
                             <option>Select Model</option>
                            
                         </select>
@@ -139,7 +157,7 @@
                             <i class="fa fa-object-group" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input type="text" name="" id="" class="form-control" placeholder="Version/Style">
+                        <input  required type="text" name="" id="" class="form-control" placeholder="Version/Style">
                     </div>
                     </div>
                     {{-- =======Transmission========== --}}
@@ -150,8 +168,8 @@
                             <i class="fa fa-cogs" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select id="my-select" class="form-control" name="transmission">
-                            <option>Transmission</option>
+                        <select  id="my-select" class="form-control" name="transmission" required>
+                            <option value="">Transmission </option>
                             <option value="Automanual">Automanual</option>
                             <option value="Automatic">Automatic</option>
                             <option value="CVT ">CVT</option>
@@ -170,7 +188,7 @@
                             <i class="fa fa-road" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input type="number" name="mileage" id="" step="10000" class="form-control" placeholder="Mileage">
+                        <input  required type="number" name="mileage" id="" step="10000" class="form-control" placeholder="Mileage">
                     </div>
                     </div>
                     {{-- =======Exterior Color========== --}}
@@ -181,7 +199,7 @@
                             <i class="fa fa-paint-brush" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select id="my-select" class="form-control" name="out-color">
+                        <select required  id="my-select" class="form-control" name="out-color">
                             <option>Exterior Color</option>
                             <option  value="Beige">Beige</option>
                             <option value="Black">Black</option>
@@ -209,7 +227,7 @@
                             <i class="fa fa-paint-brush" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select id="my-select" class="form-control" name="in-color">
+                        <select required  id="my-select" class="form-control" name="in-color">
                                 <option>Exterior Color</option>
                                 <option  value="Beige">Beige</option>
                                 <option value="Black">Black</option>
@@ -237,7 +255,7 @@
                             <i class="fa fa-window-close" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input type="number" name="door" id=""  class="form-control" placeholder="Door">
+                        <input  required type="number" name="door" id=""  class="form-control" placeholder="Door">
                     </div>
                     </div>
 
@@ -249,7 +267,7 @@
                                 <i class="fa fa-cogs" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input type="number" name="Cylinder" id=""  class="form-control" placeholder="Cylinders">
+                        <input  required type="number" name="Cylinder" id=""  class="form-control" placeholder="Cylinders">
 
                     </div>
                     </div>
@@ -261,8 +279,8 @@
                                 <i class="fa fa-cogs" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select id="my-select" class="form-control" name="drive-type">
-                            <option>Drive Type</option>
+                        <select required  id="my-select" class="form-control" name="drive-type">
+                            <option value="">Drive Type</option>
                             <option value="awd">AWD</option>
                             <option value="fwd">FWD</option>
                             <option value="rwd">RWD</option>
@@ -280,10 +298,16 @@
                                 <i class="fa fa-expeditedssl" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select id="my-select" class="form-control" name="fuel-type">
-                            <option>Fuel Type</option>
-                            <option>bmw</option>
-                            <option>bmw</option>
+                        <select required  id="my-select" class="form-control" name="fuel-type">
+                            <option value="">Fuel Type</option>
+                            <option value="cng">Compressed Natural Gas CNG</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="E85 Flex Fuel">E85 Flex Fuel</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Gasoline">Gasoline</option>
+                            <option value="Hybrid">Hybrid</option>
+                            <option value="Diesel+CNG">Diesel+CNG</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                     </div>
@@ -291,12 +315,12 @@
                 {{-- ====Price========= --}}
                 <div class="form-group bmd-form-group">
                     <label for="exampleInput1" class="bmd-label-floating">Enter Price (required)</label>
-                    <input name="price" type="number" class="form-control" placeholder="$" >
+                    <input  required name="price" type="number" class="form-control" placeholder="$" >
                     <span class="bmd-help">Price/Description.</span>
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" type="submit">Save Progress</button>
+        {{--  <button class="btn btn-primary" type="submit">Save Progress</button>  --}}
             
             <div class="card">
                 <div class="card-body">
@@ -314,7 +338,14 @@
         {{-- =======col-md-5 end======== --}}
 
 
+
+
+
+
+
+        {{-- ============================ --}}
         {{-- =======Cars Features======== --}}
+        {{-- ============================ --}}
         <div class="col-md-5">
 
             <div class="card">

@@ -170,7 +170,6 @@
         @include('frontend2.includes.nav')
         
   {{--  ==============//=Nav=============            --}}
-        @include('includes.partials.messages')
 
         {{--  bannr  --}}
         <div class=" header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('{{asset('/')}}frontend/img/bg2.jpg');">
@@ -178,7 +177,50 @@
         </div>
         {{--  bannr  --}}
 
+        
+{{--  ==========Main Content=============  --}}
         <div class="main main-raised" style="background:#9c27b070">
+          
+          {{--  @include('includes.partials.messages')  --}}
+          
+          {{--  ======Eror=======  --}}
+            @if ($errors->any())
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger">
+                        <div class="container">
+                            <div class="alert-icon">
+                            <i class="material-icons">error_outline</i>
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                            </button>
+                            <b>Error Alert:</b> Damn man! {{$error}}...
+                        </div>
+                    </div>
+                    @endforeach
+                </ul>
+            @endif
+          
+          {{--  ======Error=======  --}}
+
+          {{--  =========Success==========  --}}
+          @if (Session::get('msg'))
+          <div class="alert alert-success">
+              <div class="container">
+                <div class="alert-icon">
+                  <i class="material-icons">check</i>
+                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                </button>
+                <b>Success Alert:</b> Yuhuuu! {{Session::get('msg')}}
+              </div>
+            </div>
+          @endif
+          
+          {{--  =========Success==========  --}}
+
             @yield('content')
         </div>
               

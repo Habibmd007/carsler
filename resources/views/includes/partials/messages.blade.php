@@ -1,4 +1,5 @@
  @if($errors->any())
+
     <div class="alert alert-danger" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -8,6 +9,7 @@
             {!! $error !!}<br/>
         @endforeach
     </div>
+
 @elseif(session()->get('flash_success'))
     <div class="alert alert-success" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -20,6 +22,7 @@
             {!! session()->get('flash_success') !!}
         @endif
     </div>
+
 @elseif(session()->get('flash_warning'))
     <div class="alert alert-warning" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -32,6 +35,7 @@
             {!! session()->get('flash_warning') !!}
         @endif
     </div>
+
 @elseif(session()->get('flash_info'))
     <div class="alert alert-info" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -44,6 +48,7 @@
             {!! session()->get('flash_info') !!}
         @endif
     </div>
+
 @elseif(session()->get('flash_danger'))
     <div class="alert alert-danger" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -56,6 +61,7 @@
             {!! session()->get('flash_danger') !!}
         @endif
     </div>
+    
 @elseif(session()->get('flash_message'))
     <div class="alert alert-info" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
