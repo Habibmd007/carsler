@@ -13,20 +13,17 @@
                               <a href="#"><img src="{{asset('/')}}frontend/img/product01.jpg" alt=""></a>
                           </div>
                           <div class="post-content">
-                              <h3 class="post-title"><a href="#">Latest News Post</a></h3>
-                              <p class="post-description">
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec elementum mauris. Praesent vehicula gravida dolor, ac efficitur sem sagittis.
-                              </p>
+                              <h3 class="post-title"><a href="#"> 2019 Toyota Highlander Limited</a></h3>
+                              
                               <ul class="post-bar">
-                                  <li><i class="fa fa-calendar"></i> June 5, 2016</li>
+                                  <li> <i class="fa fa-tachometer"></i> 10,200 KM</li>
                                   <li>
-                                      <i class="fa fa-folder"></i>
-                                      <a href="#">Mockup</a>
-                                      <a href="#">Graphics</a>
-                                      <a href="#">Flayers</a>
-                                  </li>
+                                    <a href="#">Automatic</a>
+                                    <a href="#">FWD</a>
+                                    <a href="#">Octane</a>
+                                </li>
                               </ul>
-                              <a href="#" class="read-more">read more</a>
+                              <a href="#" class="read-more">$ 4300,000</a>
                           </div>
                       </div>
    
@@ -35,20 +32,17 @@
                               <a href="#"><img src="{{asset('/')}}frontend/img/product01.jpg" alt=""></a>
                           </div>
                           <div class="post-content">
-                              <h3 class="post-title"><a href="#">Latest News Post</a></h3>
-                              <p class="post-description">
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec elementum mauris. Praesent vehicula gravida dolor, ac efficitur sem sagittis.
-                              </p>
+                              <h3 class="post-title"><a href="#">2019 Toyota Highlander Limited</a></h3>
+                              
                               <ul class="post-bar">
-                                  <li><i class="fa fa-calendar"></i> June 7, 2016</li>
+                                  <li> <i class="fa fa-tachometer"></i> 10,200 KM</li>
                                   <li>
-                                      <i class="fa fa-folder"></i>
-                                      <a href="#">Mockup</a>
-                                      <a href="#">Graphics</a>
-                                      <a href="#">Flayers</a>
+                                      <a href="#">Automatic</a>
+                                      <a href="#">FWD</a>
+                                      <a href="#">Octane</a>
                                   </li>
                               </ul>
-                              <a href="#" class="read-more">read more</a>
+                              <a href="#" class="read-more">$ 4300,000</a>
                           </div>
                       </div>
                       
@@ -57,20 +51,17 @@
                               <a href="#"><img src="{{asset('/')}}frontend/img/product01.jpg" alt=""></a>
                           </div>
                           <div class="post-content">
-                              <h3 class="post-title"><a href="#">Latest News Post</a></h3>
-                              <p class="post-description">
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec elementum mauris. Praesent vehicula gravida dolor, ac efficitur sem sagittis.
-                              </p>
+                              <h3 class="post-title"><a href="#">2019 Toyota Highlander Limited</a></h3>
+                              
                               <ul class="post-bar">
-                                  <li><i class="fa fa-calendar"></i> June 5, 2016</li>
+                                  <li> <i class="fa fa-tachometer"></i> 10,200 KM</li>
                                   <li>
-                                      <i class="fa fa-folder"></i>
-                                      <a href="#">Mockup</a>
-                                      <a href="#">Graphics</a>
-                                      <a href="#">Flayers</a>
-                                  </li>
+                                        <a href="#">Automatic</a>
+                                        <a href="#">FWD</a>
+                                        <a href="#">Octane</a>
+                                    </li>
                               </ul>
-                              <a href="#" class="read-more">read more</a>
+                              <a href="#" class="read-more">$ 4300,000</a>
                           </div>
                       </div>
                       
@@ -79,20 +70,17 @@
                               <a href="#"><img src="{{asset('/')}}frontend/img/product01.jpg" alt=""></a>
                           </div>
                           <div class="post-content">
-                              <h3 class="post-title"><a href="#">Latest News Post</a></h3>
-                              <p class="post-description">
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec elementum mauris. Praesent vehicula gravida dolor, ac efficitur sem sagittis.
-                              </p>
+                              <h3 class="post-title"><a href="#">2019 Toyota Highlander Limited</a></h3>
+                              
                               <ul class="post-bar">
-                                  <li><i class="fa fa-calendar"></i> June 5, 2016</li>
+                                  <li> <i class="fa fa-tachometer"></i> 10,200 KM</li>
                                   <li>
-                                      <i class="fa fa-folder"></i>
-                                      <a href="#">Mockup</a>
-                                      <a href="#">Graphics</a>
-                                      <a href="#">Flayers</a>
-                                  </li>
+                                        <a href="#">Automatic</a>
+                                        <a href="#">FWD</a>
+                                        <a href="#">Octane</a>
+                                    </li>
                               </ul>
-                              <a href="#" class="read-more">read more</a>
+                              <a href="#" class="read-more">$ 4300,000</a>
                           </div>
                       </div>
                   </div>
@@ -100,6 +88,8 @@
           </div>
       </div>
     {{--  ==================  --}}
+
+
     {{--  ==================  --}}
       <div class="container-fluid">
           <div class="row">
@@ -113,12 +103,12 @@
                               <a href="#"><img src="{{asset('/')}}frontend/img/product01.jpg" alt=""></a>
                           </div>
                           <div class="post-content">
-                              <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+                              <h3 class="post-title"><a href="#">2019 Toyota Highlander Limited</a></h3>
                               <p class="post-description">
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec elementum mauris. Praesent vehicula gravida dolor, ac efficitur sem sagittis.
                               </p>
                               <ul class="post-bar">
-                                  <li><i class="fa fa-calendar"></i> June 5, 2016</li>
+                                  <li> <i class="fa fa-tachometer"></i> 10,200 KM</li>
                                   <li>
                                       <i class="fa fa-folder"></i>
                                       <a href="#">Mockup</a>
@@ -126,7 +116,7 @@
                                       <a href="#">Flayers</a>
                                   </li>
                               </ul>
-                              <a href="#" class="read-more">read more</a>
+                              <a href="#" class="read-more">$ 4300,000</a>
                           </div>
                       </div>
    
@@ -135,12 +125,12 @@
                               <a href="#"><img src="{{asset('/')}}frontend/img/product01.jpg" alt=""></a>
                           </div>
                           <div class="post-content">
-                              <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+                              <h3 class="post-title"><a href="#">2019 Toyota Highlander Limited</a></h3>
                               <p class="post-description">
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec elementum mauris. Praesent vehicula gravida dolor, ac efficitur sem sagittis.
                               </p>
                               <ul class="post-bar">
-                                  <li><i class="fa fa-calendar"></i> June 7, 2016</li>
+                                  <<li><i class="fa fa-calendar"></i>10,200 KM</<li>
                                   <li>
                                       <i class="fa fa-folder"></i>
                                       <a href="#">Mockup</a>
@@ -148,7 +138,7 @@
                                       <a href="#">Flayers</a>
                                   </li>
                               </ul>
-                              <a href="#" class="read-more">read more</a>
+                              <a href="#" class="read-more">$ 4300,000</a>
                           </div>
                       </div>
                       
@@ -157,12 +147,12 @@
                               <a href="#"><img src="{{asset('/')}}frontend/img/product01.jpg" alt=""></a>
                           </div>
                           <div class="post-content">
-                              <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+                              <h3 class="post-title"><a href="#">2019 Toyota Highlander Limited</a></h3>
                               <p class="post-description">
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec elementum mauris. Praesent vehicula gravida dolor, ac efficitur sem sagittis.
                               </p>
                               <ul class="post-bar">
-                                  <li><i class="fa fa-calendar"></i> June 5, 2016</li>
+                                  <li> <i class="fa fa-tachometer"></i> 10,200 KM</li>
                                   <li>
                                       <i class="fa fa-folder"></i>
                                       <a href="#">Mockup</a>
@@ -170,7 +160,7 @@
                                       <a href="#">Flayers</a>
                                   </li>
                               </ul>
-                              <a href="#" class="read-more">read more</a>
+                              <a href="#" class="read-more">$ 4300,000</a>
                           </div>
                       </div>
                       
@@ -179,12 +169,12 @@
                               <a href="#"><img src="{{asset('/')}}frontend/img/product01.jpg" alt=""></a>
                           </div>
                           <div class="post-content">
-                              <h3 class="post-title"><a href="#">Latest News Post</a></h3>
+                              <h3 class="post-title"><a href="#">2019 Toyota Highlander Limited</a></h3>
                               <p class="post-description">
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec elementum mauris. Praesent vehicula gravida dolor, ac efficitur sem sagittis.
                               </p>
                               <ul class="post-bar">
-                                  <li><i class="fa fa-calendar"></i> June 5, 2016</li>
+                                  <li> <i class="fa fa-tachometer"></i> 10,200 KM</li>
                                   <li>
                                       <i class="fa fa-folder"></i>
                                       <a href="#">Mockup</a>
@@ -192,7 +182,7 @@
                                       <a href="#">Flayers</a>
                                   </li>
                               </ul>
-                              <a href="#" class="read-more">read more</a>
+                              <a href="#" class="read-more">$ 4300,000</a>
                           </div>
                       </div>
                   </div>

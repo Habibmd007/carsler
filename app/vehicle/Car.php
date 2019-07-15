@@ -4,7 +4,7 @@ namespace App\vehicle;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Make extends Model
+class Car extends Model
 {
     //
 }

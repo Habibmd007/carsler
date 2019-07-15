@@ -44,6 +44,7 @@ class UserTableSeeder extends Seeder
             'confirmation_code' => md5(uniqid(mt_rand(), true)),
             'confirmed' => true,
         ]);
+        
 
         $this->enableForeignKeys();
     }

@@ -1,15 +1,19 @@
-@extends('frontend.layouts.app')
+@extends('frontend2.layouts.app')
+
+@section('banner')
+<div style="height:200px"></div>
+@endsection
 
 @section('title', app_name() . ' | ' . __('labels.frontend.auth.register_box_title'))
 
 @section('content')
     <div class="row justify-content-center align-items-center">
-        <div class="col col-sm-8 align-self-center">
+        <div class="col col-sm-4 align-self-center">
             <div class="card">
-                <div class="card-header">
-                    <strong>
+                <div class="card-header card-header-primary text-center">
+                    <h4>
                         @lang('labels.frontend.auth.register_box_title')
-                    </strong>
+                    </h4>
                 </div><!--card-header-->
 
                 <div class="card-body">
@@ -17,7 +21,6 @@
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.first_name'))->for('first_name') }}
 
                                     {{ html()->text('first_name')
                                         ->class('form-control')
@@ -29,7 +32,6 @@
 
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.last_name'))->for('last_name') }}
 
                                     {{ html()->text('last_name')
                                         ->class('form-control')
@@ -43,7 +45,6 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
 
                                     {{ html()->email('email')
                                         ->class('form-control')
@@ -57,7 +58,6 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.password'))->for('password') }}
 
                                     {{ html()->password('password')
                                         ->class('form-control')
@@ -70,7 +70,6 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.password_confirmation'))->for('password_confirmation') }}
 
                                     {{ html()->password('password_confirmation')
                                         ->class('form-control')

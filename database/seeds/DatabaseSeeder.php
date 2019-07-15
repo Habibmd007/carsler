@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             AuthTableSeeder::class,
-            MakeSeeder::class,
             ]);
 
         Model::reguard();

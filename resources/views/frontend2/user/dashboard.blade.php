@@ -1,4 +1,9 @@
-@extends('frontend.layouts.app')
+@extends('frontend2.layouts.app')
+
+@section('banner')
+<div style="height:200px"></div>
+@endsection
+
 
 @section('title', app_name() . ' | ' . __('navs.frontend.dashboard') )
 
@@ -6,10 +11,10 @@
     <div class="row mb-4">
         <div class="col">
             <div class="card">
-                <div class="card-header">
-                    <strong>
+                <div class="card-header card-header-primary text-center">
+                    <h4>
                         <i class="fas fa-tachometer-alt"></i> @lang('navs.frontend.dashboard')
-                    </strong>
+                    </h4>
                 </div><!--card-header-->
 
                 <div class="card-body">
@@ -46,19 +51,21 @@
                             </div>
 
                             <div class="card mb-4">
-                                <div class="card-header">Header</div>
+                                <div class="card-header card-header-primary text-center">Header</div>
                                 <div class="card-body">
-                                    <h4 class="card-title">Info card title</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h4 class="card-title">Info card title hhhhhhhhhhh</h4>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
                                 </div>
                             </div><!--card-->
                         </div><!--col-md-4-->
 
                         <div class="col-md-8 order-2 order-sm-1">
+                       
+
                             <div class="row">
                                 <div class="col">
                                     <div class="card mb-4">
-                                        <div class="card-header">
+                                        <div class="card-header card-header-primary text-center">
                                             Item
                                         </div><!--card-header-->
 
@@ -72,21 +79,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="card mb-4">
-                                        <div class="card-header">
-                                            Item
-                                        </div><!--card-header-->
-
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
-                                        </div><!--card-body-->
-                                    </div><!--card-->
-                                </div><!--col-md-6-->
-                            </div><!--row-->
-
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
+                                        <div class="card-header card-header-primary text-center">
                                             Item
                                         </div><!--card-header-->
 
@@ -98,7 +91,7 @@
 
                                 <div class="col">
                                     <div class="card mb-4">
-                                        <div class="card-header">
+                                        <div class="card-header card-header-primary text-center">
                                             Item
                                         </div><!--card-header-->
 
@@ -110,29 +103,7 @@
 
                                 <div class="w-100"></div>
 
-                                <div class="col">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            Item
-                                        </div><!--card-header-->
-
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
-                                        </div><!--card-body-->
-                                    </div><!--card-->
-                                </div><!--col-md-6-->
-
-                                <div class="col">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            Item
-                                        </div><!--card-header-->
-
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
-                                        </div><!--card-body-->
-                                    </div><!--card-->
-                                </div><!--col-md-6-->
+                                
                             </div><!--row-->
                         </div><!--col-md-8-->
                     </div><!-- row -->

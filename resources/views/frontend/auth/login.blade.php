@@ -76,6 +76,8 @@
                         </div><!--col-->
                     </div><!--row-->
                 </div><!--card body-->
+
+                
             </div><!--card-->
         </div><!-- col-md-8 -->
     </div><!-- row -->

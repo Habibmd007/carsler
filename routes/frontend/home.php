@@ -17,7 +17,7 @@ Route::post('contact/send', [ContactController::class, 'send'])->name('contact.s
 // ====Post routes============
 Route::group(['prefix' => 'post'], function () {
     
-    Route::get('/posts/{id}', 'PostController@index')->name('index');
+    Route::get('/posts/{id}', 'PostController@index')->name('all');
     Route::get('/create/{id}', 'PostController@create')->name('create');
     Route::get('/show/{id}', 'PostController@show')->name('show');
     Route::post('/save/{id}', 'PostController@store')->name('save');

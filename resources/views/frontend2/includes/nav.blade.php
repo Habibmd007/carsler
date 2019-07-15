@@ -59,9 +59,9 @@
              
 
           @auth
-            @if (Auth::user()->roles[0]->name==='administrator')
+            {{--  @if (Auth::user()->roles[0]->name==='administrator')  --}}
               <li class="nav-item"><a href="{{route('frontend.user.dashboard')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.user.dashboard')) }}"> @lang('navs.frontend.dashboard') </a></li>
-            @endif
+            {{--  @endif  --}}
           @endauth
             
          @guest

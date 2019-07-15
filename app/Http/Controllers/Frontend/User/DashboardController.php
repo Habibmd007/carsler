@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend\User;
 
 use App\Http\Controllers\Controller;
+use App\vehicle\Car;
 
 /**
  * Class DashboardController.
@@ -14,6 +15,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('frontend.user.dashboard');
+        $post = new Car();
+        return view('frontend2.user.dashboard');
     }
 }

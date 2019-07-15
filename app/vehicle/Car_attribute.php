@@ -4,7 +4,7 @@ namespace App\vehicle;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Color extends Model
+class Car_attribute extends Model
 {
     //
 }

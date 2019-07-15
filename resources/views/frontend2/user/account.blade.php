@@ -1,13 +1,17 @@
-@extends('frontend.layouts.app')
+@extends('frontend2.layouts.app')
+
+@section('banner')
+<div style="height:200px"></div>
+@endsection
 
 @section('content')
     <div class="row justify-content-center align-items-center mb-3">
         <div class="col col-sm-10 align-self-center">
             <div class="card">
-                <div class="card-header">
-                    <strong>
+                <div class="card-header card-header-primary text-center">
+                    <h4>
                         @lang('navs.frontend.user.account')
-                    </strong>
+                    </h4>
                 </div>
 
                 <div class="card-body">

@@ -60,8 +60,9 @@
         }
 
         .shop .shop-body h3 {
-            color: #000;
+            color: #fff;
             font-weight: 500;
+            font-size: 2.5625rem
         }
 
         .shop:before {
@@ -71,7 +72,7 @@
             bottom: 0;
             left: 0px;
             width: 60%;
-            background: #FFC300;
+            background: #9c27b0;
             opacity: 0.7;
             -webkit-transform: skewX(-45deg);
             -ms-transform: skewX(-45deg);
@@ -85,7 +86,7 @@
             bottom: 0;
             left: 1px;
             width: 100%;
-            background: #FFC300;
+            background: #9c27b0;
             opacity: 0.7;
             -webkit-transform: skewX(-45deg) translateX(-100%);
             -ms-transform: skewX(-45deg) translateX(-100%);

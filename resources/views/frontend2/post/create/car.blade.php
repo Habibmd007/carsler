@@ -22,8 +22,9 @@
             {{-- ======body type========== --}}
             <div class="card">
                 <div class="card-body">
-                    <li class="dropdown nav-item  nav-link ">
+                    <h5 class="card-title">Fill up the form please (*Required)</h5>
 
+                    <li class="dropdown nav-item  nav-link ">
                         <a href="#" class="dropdown-toggle btn btn-primary " data-toggle="dropdown">
                             <i class="fa fa-car" aria-hidden="true"></i> Select body type
                             <div class="ripple-container"></div>
@@ -47,14 +48,10 @@
                             <a href="javascript:void(0)" onclick="bType(this.id)" id="limousine" class="dropdown-item">
                                 <img class=" material-icons" src="{{asset('/')}}frontend/carbody/limousine.jpg" alt="" height="100"> limousine
                             </a>
-                            <a href="javascript:void(0)" onclick="bType(this.id)" id="mini-bus" class="dropdown-item">
-                                <img class=" material-icons" src="{{asset('/')}}frontend/carbody/mini-bus.png" alt="" height="100"> mini-bus
-                            </a>
-                            <a href="javascript:void(0)" onclick="bType(this.id)" id="micro-bus" class="dropdown-item">
-                                <img class=" material-icons" src="{{asset('/')}}frontend/carbody/micro-bus.png" alt="" height="100"> micro-bus
-                            </a>
+                            
+                            
                             <a href="javascript:void(0)" onclick="bType(this.id)" id="minivan" class="dropdown-item">
-                                <img class=" material-icons" src="{{asset('/')}}frontend/carbody/minivan.jpg" alt="" height="100"> minivan
+                                <img class=" material-icons" src="{{asset('/')}}frontend/carbody/minivan.jpg" alt="" height="100"> minivan/van/mpv
                             </a>
                             
                             <a href="javascript:void(0)" onclick="bType(this.id)" id="pickup-trucks" class="dropdown-item">
@@ -82,8 +79,8 @@
                         </div>
 
                     </li>
-                </div>
-            </div>
+               
+                    {{-- ======body type end========== --}}
 
 
 
@@ -96,22 +93,34 @@
             <form action="{{route('frontend.save','id')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Required</h5>
+                
                         
                     {{-- ======body type========== --}}
-                    <div class="form-group bmd-form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="fa fa-car" aria-hidden="true"></i>
-                                </span>
-                            </div>
-                            <input id="body-type" name="body-type" type="text" class="form-control" placeholder="body type" readonly required>
-                        </div>
-                    </div>
+                   
+                    <input id="body-type" name="body_type" type="text" class="form-control" placeholder="*body type" value="" readonly required>
 
+                  
+
+                    {{-- =======Condition========== --}}
+                    <div class="form-group bmd-form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-align-justify" aria-hidden="true"></i>
+                        </span>
+                        </div>
+
+                        <select required  id="my-select" class="form-control" name="condition">
+                            <option >*Condition</option>
+                            <option value="new">New</option>
+                            <option value="used">Used</option>
+                            <option value="certified">Certified (CPO)</option>
+                            <option value="reconditioned">Reconditioned</option>
+                           
+                        </select>
+
+                    </div>
+                    </div>
                     {{-- =======Make========== --}}
                     <div class="form-group bmd-form-group">
                     <div class="input-group">
@@ -125,7 +134,7 @@
                         @endphp
 
                         <select required  onchange="cmodel(this.value)" id="my-select model-select" class="form-control" name="make">
-                            <option value="">Make</option>
+                            <option value="">*Make</option>
                             @foreach ($makes as $make)
                                 <option value="{{$make->id}}">{{$make->title}}</option>
                             @endforeach
@@ -144,7 +153,7 @@
                         </div>
                        
                         <select required  id="model-select" class="form-control" name="model">
-                            <option>Select Model</option>
+                            <option>*Select Model</option>
                            
                         </select>
                     </div>
@@ -157,7 +166,7 @@
                             <i class="fa fa-object-group" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input  required type="text" name="" id="" class="form-control" placeholder="Version/Style">
+                        <input type="text" name="edition" id="" class="form-control" placeholder="Version/Edition (Optional)">
                     </div>
                     </div>
                     {{-- =======Transmission========== --}}
@@ -169,7 +178,7 @@
                         </span>
                         </div>
                         <select  id="my-select" class="form-control" name="transmission" required>
-                            <option value="">Transmission </option>
+                            <option value="">*Transmission </option>
                             <option value="Automanual">Automanual</option>
                             <option value="Automatic">Automatic</option>
                             <option value="CVT ">CVT</option>
@@ -185,10 +194,10 @@
                     <div class="input-group">
                         <div class="input-group-prepend">
                         <span class="input-group-text">
-                            <i class="fa fa-road" aria-hidden="true"></i>
+                            <i class="fa fa-tachometer" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input  required type="number" name="mileage" id="" step="10000" class="form-control" placeholder="Mileage">
+                        <input  required type="number" name="mileage" id="" step="10000" class="form-control" placeholder="*Mileage">
                     </div>
                     </div>
                     {{-- =======Exterior Color========== --}}
@@ -199,8 +208,8 @@
                             <i class="fa fa-paint-brush" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select required  id="my-select" class="form-control" name="out-color">
-                            <option>Exterior Color</option>
+                        <select required  id="my-select" class="form-control" name="out_color">
+                            <option>*Exterior Color</option>
                             <option  value="Beige">Beige</option>
                             <option value="Black">Black</option>
                             <option value="Blue">Blue</option>
@@ -227,8 +236,8 @@
                             <i class="fa fa-paint-brush" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select required  id="my-select" class="form-control" name="in-color">
-                                <option>Exterior Color</option>
+                        <select required  id="my-select" class="form-control" name="in_color">
+                                <option>*Interior Color</option>
                                 <option  value="Beige">Beige</option>
                                 <option value="Black">Black</option>
                                 <option value="Blue">Blue</option>
@@ -255,7 +264,7 @@
                             <i class="fa fa-window-close" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input  required type="number" name="door" id=""  class="form-control" placeholder="Door">
+                        <input  required type="number" name="door" id=""  class="form-control" placeholder="*Door">
                     </div>
                     </div>
 
@@ -267,7 +276,7 @@
                                 <i class="fa fa-cogs" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input  required type="number" name="Cylinder" id=""  class="form-control" placeholder="Cylinders">
+                        <input  required type="number" name="Cylinder" id=""  class="form-control" placeholder="*Cylinders">
 
                     </div>
                     </div>
@@ -279,8 +288,8 @@
                                 <i class="fa fa-cogs" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <select required  id="my-select" class="form-control" name="drive-type">
-                            <option value="">Drive Type</option>
+                        <select required  id="my-select" class="form-control" name="drive_type">
+                            <option >*Drive Type</option>
                             <option value="awd">AWD</option>
                             <option value="fwd">FWD</option>
                             <option value="rwd">RWD</option>
@@ -295,26 +304,61 @@
                     <div class="input-group">
                         <div class="input-group-prepend">
                         <span class="input-group-text">
-                                <i class="fa fa-expeditedssl" aria-hidden="true"></i>
+                            <i class="fa fa-cogs" aria-hidden="true"></i> 
                         </span>
+                        
                         </div>
-                        <select required  id="my-select" class="form-control" name="fuel-type">
-                            <option value="">Fuel Type</option>
-                            <option value="cng">Compressed Natural Gas CNG</option>
-                            <option value="Diesel">Diesel</option>
-                            <option value="E85 Flex Fuel">E85 Flex Fuel</option>
-                            <option value="Electric">Electric</option>
-                            <option value="Gasoline">Gasoline</option>
-                            <option value="Hybrid">Hybrid</option>
-                            <option value="Diesel+CNG">Diesel+CNG</option>
-                            <option value="other">Other</option>
-                        </select>
+
+                        {{--  =============  --}}
+                            <select id="my-select" name="fuel" class="form-control" required>
+                                <option selected>*Fuel Type</option>
+                                <option value="octane">Octane</option>
+                                <option value="petrol">Petrol</option>
+                                <option value="diesel">Diesel</option>
+                                <option value="cng">CNG</option>
+                                <option value="lpg">LPG</option>
+                                <option value="gasoline">Gasoline</option>
+                                <option value="electric">Hybrid</option>
+                                <option value="electric">Electric</option>
+                                <option value="f85">E85 Flex FUel</option>
+                            </select>
+                        {{--  =============  --}}
                     </div>
                     </div>
 
+                    {{-- =======Alternate Fuel========== --}}
+                    <div class="form-group bmd-form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-cogs" aria-hidden="true"></i> 
+                        </span>
+                        
+                        </div>
+
+                        {{--  =============  --}}
+                            <select id="my-select" name="alt_fuel" class="form-control">
+                                <option selected>Alternate Fuel</option>
+                                <option value="octane">Octane</option>
+                                <option value="petrol">Petrol</option>
+                                <option value="diesel">Diesel</option>
+                                <option value="cng">CNG</option>
+                                <option value="lpg">LPG</option>
+                                <option value="gasoline">Gasoline</option>
+                                <option value="electric">Hybrid</option>
+                                <option value="electric">Electric</option>
+                                <option value="f85">E85 Flex FUel</option>
+                            </select>
+                        {{--  =============  --}}
+                    </div>
+                    </div>
+
+                        
+                    
+
                 {{-- ====Price========= --}}
                 <div class="form-group bmd-form-group">
-                    <label for="exampleInput1" class="bmd-label-floating">Enter Price (required)</label>
+                    <label for="exampleInput1" class="bmd-label-floating">*Enter Price</label>
                     <input  required name="price" type="number" class="form-control" placeholder="$" >
                     <span class="bmd-help">Price/Description.</span>
                 </div>
@@ -322,9 +366,11 @@
         </div>
         {{--  <button class="btn btn-primary" type="submit">Save Progress</button>  --}}
             
+
+        
+        {{-- ====Enter Description========= --}}
             <div class="card">
                 <div class="card-body">
-                    {{-- ====Enter Description========= --}}
                     <div class="form-group bmd-form-group">
                         <label for="exampleInput1" class="bmd-label-floating">Enter Description (optional)</label>
                         <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
@@ -355,7 +401,7 @@
                     {{-- ======A/C: Front========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="ac-front" class="form-check-input" type="checkbox" value="1"> A/C: Front
+                            <input name="ac_front" class="form-check-input" type="checkbox" value="1"> A/C: Front
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -364,7 +410,7 @@
                     {{-- ======A/C: Rear========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="ac-rear" class="form-check-input" type="checkbox" value="1"> A/C: Rear
+                            <input name="ac_rear" class="form-check-input" type="checkbox" value="1"> A/C: Rear
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -373,7 +419,7 @@
                     {{-- ======Cruise Control========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="cruise-control" class="form-check-input" type="checkbox" value="1"> Cruise Control
+                            <input name="cruise_control" class="form-check-input" type="checkbox" value="1"> Cruise Control
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -391,7 +437,7 @@
                     {{-- ======Power Locks========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="power-locks" class="form-check-input" type="checkbox" value="1"> Power Locks
+                            <input name="power_locks" class="form-check-input" type="checkbox" value="1"> Power Locks
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -400,7 +446,7 @@
                     {{-- ======Power Steering========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="power-steering" class="form-check-input" type="checkbox" value="1"> Power Steering
+                            <input name="power_steering" class="form-check-input" type="checkbox" value="1"> Power Steering
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -409,7 +455,7 @@
                     {{-- ======Keyless Entry========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="keyless-entry" class="form-check-input" type="checkbox" value="1"> Keyless Entry
+                            <input name="keyless_entry" class="form-check-input" type="checkbox" value="1"> Keyless Entry
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -418,7 +464,7 @@
                     {{-- ======Integrated Phone========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="integrated-Phone" class="form-check-input" type="checkbox" value="1"> Integrated Phone
+                            <input name="integrated_phone" class="form-check-input" type="checkbox" value="1"> Integrated Phone
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -436,7 +482,7 @@
                     {{-- ========Bucket Seats========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="bucket-seats" class="form-check-input" type="checkbox" value="1"> Bucket Seats
+                            <input name="bucket_seats" class="form-check-input" type="checkbox" value="1"> Bucket Seats
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -445,7 +491,7 @@
                     {{-- ========Leather Interior========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="leather-interior" class="form-check-input" type="checkbox" value="1"> Leather Interior
+                            <input name="leather_interior" class="form-check-input" type="checkbox" value="1"> Leather Interior
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -454,7 +500,7 @@
                     {{-- ========Memory Seats========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="memory-seats" class="form-check-input" type="checkbox" value="1"> Memory Seats
+                            <input name="memory_seat" class="form-check-input" type="checkbox" value="1"> Memory Seats
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -463,7 +509,7 @@
                     {{-- ========Power Seats========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="power-seats" class="form-check-input" type="checkbox" value="1"> Power Seats
+                            <input name="power_seat" class="form-check-input" type="checkbox" value="1"> Power Seats
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -481,7 +527,7 @@
                     {{-- ========Airbag: Driver========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="airbag-driver" class="form-check-input" type="checkbox" value="1"> Airbag: Driver
+                            <input name="airbag_driver" class="form-check-input" type="checkbox" value="1"> Airbag: Driver
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -490,7 +536,7 @@
                     {{-- ========Airbag: Passenger========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="airbag-passenger" class="form-check-input" type="checkbox" value="1"> Airbag: Passenger
+                            <input name="airbag_passenger" class="form-check-input" type="checkbox" value="1"> Airbag: Passenger
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -499,7 +545,7 @@
                     {{-- ========Airbag: Side========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="airbag-side" class="form-check-input" type="checkbox" value="1"> Airbag: Side
+                            <input name="airbag_side" class="form-check-input" type="checkbox" value="1"> Airbag: Side
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -517,7 +563,7 @@
                     {{-- ========Antilock Brakes========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="antilock-brakes" class="form-check-input" type="checkbox" value="1"> Antilock Brakes
+                            <input name="antilock_brakes" class="form-check-input" type="checkbox" value="1"> Antilock Brakes
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -526,7 +572,7 @@
                     {{-- ========Fog Lights========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="fog-lights" class="form-check-input" type="checkbox" value="1"> Fog Lights
+                            <input name="fog_light" class="form-check-input" type="checkbox" value="1"> Fog Lights
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -543,7 +589,7 @@
                     {{-- ========Power Windows========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="power-windows" class="form-check-input" type="checkbox" value="1"> Power Windows
+                            <input name="power_window" class="form-check-input" type="checkbox" value="1"> Power Windows
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -552,7 +598,7 @@
                     {{-- ========Rear Window Defroster========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="r-w-defroster" class="form-check-input" type="checkbox" value="1"> Rear Window Defroster
+                            <input name="r_w_defroster" class="form-check-input" type="checkbox" value="1"> Rear Window Defroster
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -561,7 +607,7 @@
                     {{-- ========Rear Window Wiper========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="r-w-wiper" class="form-check-input" type="checkbox" value="1"> Rear Window Wiper
+                            <input name="r_w_wiper" class="form-check-input" type="checkbox" value="1"> Rear Window Wiper
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -570,7 +616,7 @@
                     {{-- ========Tinted Glass========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="tinted-glass" class="form-check-input" type="checkbox" value="1"> Tinted Glass
+                            <input name="tinted_glass" class="form-check-input" type="checkbox" value="1"> Tinted Glass
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -588,7 +634,7 @@
                     {{-- ========Power Windows========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="am-fm" class="form-check-input" type="checkbox" value="1"> AM/FM Stereo
+                            <input name="am_fm" class="form-check-input" type="checkbox" value="1"> AM/FM Stereo
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -597,7 +643,7 @@
                     {{-- ========Cassette Player========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="cassette-player" class="form-check-input" type="checkbox" value="1"> Cassette Player
+                            <input name="cassette_player" class="form-check-input" type="checkbox" value="1"> Cassette Player
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -606,7 +652,7 @@
                     {{-- ========CD (Single Disc)r========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="cd-single" class="form-check-input" type="checkbox" value="1"> CD (Single Disc)
+                            <input name="cd_single" class="form-check-input" type="checkbox" value="1"> CD (Single Disc)
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -615,7 +661,7 @@
                     {{-- ========CD (Multi Disc)========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="cd-multi" class="form-check-input" type="checkbox" value="1"> CD (Multi Disc)
+                            <input name="cd_multi" class="form-check-input" type="checkbox" value="1"> CD (Multi Disc)
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -633,7 +679,7 @@
                     {{-- ========Premium Sound======== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="premium-sound" class="form-check-input" type="checkbox" value="1"> Premium Sound
+                            <input name="premium_sound" class="form-check-input" type="checkbox" value="1"> Premium Sound
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -660,7 +706,7 @@
                     {{-- ========Alloy Wheelss========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="alloy-wheels" class="form-check-input" type="checkbox" value="1"> Alloy Wheels
+                            <input name="alloy_wheel" class="form-check-input" type="checkbox" value="1"> Alloy Wheels
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -669,7 +715,7 @@
                     {{-- ========Moonroof/Sunroof========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="moon-sunroof" class="form-check-input" type="checkbox" value="1"> Moonroof/Sunroof
+                            <input name="moon_sunroof" class="form-check-input" type="checkbox" value="1"> Moonroof/Sunroof
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
@@ -678,7 +724,7 @@
                     {{-- ========Third Row Seats========== --}}
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input name="third-row-seats" class="form-check-input" type="checkbox" value="1"> Third Row Seats
+                            <input name="third_row_seat" class="form-check-input" type="checkbox" value="1"> Third Row Seats
                             <span class="form-check-sign">
                             <span class="check"></span>
                             </span>
