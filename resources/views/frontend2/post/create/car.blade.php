@@ -379,6 +379,81 @@
 
                 </div>
             </div>
+        
+
+
+        {{-- ====Enter Location ========= --}}
+            <div class="card">
+                <div class="card-body">
+
+
+                    {{-- =======state========== --}}
+                    <div class="form-group bmd-form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons">place</i>
+                                </span>
+                                </div>
+                                @php
+                                    $divisions= DB::table('divisions')->get();
+                                @endphp
+        
+                                <select required  onchange="cityS(this.value)" id="my-select model-select" class="form-control" name="state">
+                                    <option value="">*State</option>
+                                    @foreach ($divisions as $division)
+                                        <option value="{{$division->id}}">{{$division->name}}</option>
+                                    @endforeach
+                                </select>
+        
+                            </div>
+                            </div>
+        
+                            {{-- =======city========== --}}
+                            <div class="form-group bmd-form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons">place</i>
+                                </span>
+                                </div>
+                               
+                                <select required  id="city-select" class="form-control" name="city" onchange="thanaS(this.value)">
+                                    <option>*Select City</option>
+                                   
+                                </select>
+                            </div>
+                            </div>
+
+                            {{-- =======Thana========== --}}
+                            <div class="form-group bmd-form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons">place</i>
+                                </span>
+                                </div>
+                               
+                                <select required   id="thana-select" class="form-control" name="thana">
+                                    <option>*Select Thana</option>
+                                   
+                                </select>
+                            </div>
+                            </div>
+                            {{-- =======address ========== --}}
+                            <div class="form-group bmd-form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons">place</i>
+                                </span>
+                                </div>
+                                <input type="text" name="road" id="" class="form-control" placeholder="Road/House">
+                            </div>
+                            </div>
+
+                </div>
+            </div> <!-card->
             <button class="btn btn-primary" type="submit">Save</button>
         </div>
         {{-- =======col-md-5 end======== --}}
@@ -767,6 +842,51 @@
 
             }
     
-        {{-- =======car model========== --}}
+        {{-- =====///==car model end========== --}}
+
+        {{-- =======city select========== --}}
+        function cityS(val){
+                var iie= val;
+                    $.ajax({
+                        type:"POST",
+                        url:'http://localhost/carsler-2/public/post/selectCity',
+                        data: {
+                            id: iie,
+                            _token: $('#csrftoken').val(),
+                        },
+                        dataType: "html",
+                        success: function(response) {
+                        $('#city-select').html(response);
+                        console.log(response);
+                            
+                        }
+                    })
+
+            }
+    
+        {{-- =====///==car model end========== --}}
+
+
+        {{-- =======thana select========== --}}
+        function thanaS(val){
+                var iie= val;
+                    $.ajax({
+                        type:"POST",
+                        url:'http://localhost/carsler-2/public/post/selectThana',
+                        data: {
+                            id: iie,
+                            _token: $('#csrftoken').val(),
+                        },
+                        dataType: "html",
+                        success: function(response) {
+                        $('#thana-select').html(response);
+                        console.log(response);
+                            
+                        }
+                    })
+
+            }
+    
+        {{-- =====///==thana end========== --}}
 </script>
 @endsection

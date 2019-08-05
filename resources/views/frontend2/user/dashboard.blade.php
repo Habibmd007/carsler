@@ -27,10 +27,12 @@
                                     {{-- <div class="mb-4"> --}}
                                         <div class="post-slide2">
                                             <div class="post-img">
-                                                <a href="#"><img src="{{asset('/')}}frontend/img/product01.jpg" alt=""></a>
+                                                <a href="{{route('frontend.show',['id'=>$post->id])}}">
+                                                    <img src="{{asset('/')}}frontend/img/product01.jpg" alt="">
+                                                </a>
                                             </div>
                                             <div class="post-content">
-                                                <h3 class="post-title"><a href="#">{{$post->head}}</a></h3>
+                                                <h3 class="post-title"><a href="{{route('frontend.show',['id'=>$post->id])}}">{{$post->head}}</a></h3>
                                                 <p class="post-description"> {{$post->description}} </p>
 
                                                 <ul class="post-bar"><li><i class="fa fa-tachometer"></i>{{$post->mileage}} KM </li></ul>

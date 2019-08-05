@@ -34,6 +34,10 @@ class CreateCarsTable extends Migration
             $table->integer('price');
             $table->boolean('active')->default(0);
             $table->text('description', 500)->nullable();
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            $table->string('thana')->nullable();
+            $table->string('road')->nullable();
             $table->timestamps();
         });
     }

@@ -22,7 +22,10 @@ Route::group(['prefix' => 'post'], function () {
     Route::get('/show/{id}', 'PostController@show')->name('show');
     Route::post('/save/{id}', 'PostController@store')->name('save');
     Route::post('/selectModel', 'PostController@selectModel')->name('selectModel');
+    Route::post('/selectCity', 'PostController@selectCity')->name('selectCity');
+    Route::post('/selectThana', 'PostController@selectThana')->name('selectThana');
     Route::get('edit/{id}', 'PostController@edit')->name('edit');
+    Route::post('update/', 'PostController@update')->name('update');
     Route::get('delete/{id}', 'PostController@delete')->name('delete');
     Route::get('active-post/{id}', 'PostController@active')->name('active-post');
 

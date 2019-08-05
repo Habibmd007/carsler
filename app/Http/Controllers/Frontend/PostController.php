@@ -43,6 +43,25 @@ class PostController extends Controller
         }
        
     }
+    public function selectCity(Request $request)
+    {
+        // return 'ok';
+        $districts= DB::table('districts')->where('division_id', $request->id )->get();
+        foreach( $districts as  $district){
+            echo' <option value=" '.$district->id.' "> '.$district->name.'</option>';
+        }
+       
+    }
+
+    public function selectThana(Request $request)
+    {
+        // return 'ok';
+        $thanas= DB::table('upazilas')->where('district_id', $request->id )->get();
+        foreach( $thanas as  $thana){
+            echo' <option value=" '.$thana->id.' "> '.$thana->name.'</option>';
+        }
+       
+    }
 
     public function store(Request $request)
     {
@@ -129,7 +148,8 @@ class PostController extends Controller
   
     public function show($id)
     {
-        return view('frontend2.post.show.single');
+        $post= Car::find($id);
+        return view('frontend2.post.show.single',compact('post'));
     }
 
   
@@ -141,9 +161,11 @@ class PostController extends Controller
     }
 
  
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-       $car=new Car();
+    // return $request;
+       $car= Car::find($request->id);
+       $car->head = $request->head;
        $car->body_type = $request->body_type;
        $car->condition = $request->condition;
        $car->make = $request->make;
@@ -161,6 +183,9 @@ class PostController extends Controller
        $car->price = $request->price;
        $car->description = $request->description;
        $car->save();
+
+       $post= Car::find($request->id);
+       return redirect('dashboard')->with('msg', 'Info updated sucessfully');
     }
 
 
@@ -177,3 +202,4 @@ class PostController extends Controller
         return redirect()->back()->with('msg', 'Publication status Updated succsessfully');
     }
 }
+

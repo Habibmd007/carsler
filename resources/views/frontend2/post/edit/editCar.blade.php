@@ -90,7 +90,7 @@
 
 
             {{--  =====Form start=============  --}}
-            <form action="{{route('frontend.save','id')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('frontend.update')}}" method="post" enctype="multipart/form-data" name="caredit">
                 @csrf
                 
                 
@@ -98,8 +98,19 @@
                     {{-- ======body type========== --}}
                    
                     <input id="body-type" name="body_type" type="text" class="form-control" placeholder="*body type" value="{{$post->body_type}}" readonly required>
+                    <input  name="id" type="hidden" class="form-control" value="{{$post->id}}" required>
 
-                  
+                  {{-- =======Heading========== --}}
+                  <div class="form-group bmd-form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-object-group" aria-hidden="true"></i>
+                            </span>
+                            </div>
+                            <input type="text" name="head" id="" class="form-control" placeholder="Heading *" value="{{$post->head}}">
+                        </div>
+                    </div>
 
                     {{-- =======Condition========== --}}
                     <div class="form-group bmd-form-group">
@@ -158,6 +169,7 @@
                         </select>
                     </div>
                     </div>
+
                     {{-- =======Version========== --}}
                     <div class="form-group bmd-form-group">
                     <div class="input-group">
@@ -166,9 +178,11 @@
                             <i class="fa fa-object-group" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input type="text" name="edition" id="" class="form-control" placeholder="Version/Edition (Optional)">
+                        <input type="text" name="edition" id="" class="form-control" placeholder="Version/Edition (Optional)" value="{{$post->edition}}">
                     </div>
                     </div>
+
+
                     {{-- =======Transmission========== --}}
                     <div class="form-group bmd-form-group">
                     <div class="input-group">
@@ -197,7 +211,7 @@
                             <i class="fa fa-tachometer" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input  required type="number" name="mileage" id="" step="10000" class="form-control" placeholder="*Mileage">
+                        <input  required type="number" name="mileage" id="" step="10000" class="form-control" placeholder="*Mileage" value="{{$post->mileage}}">
                     </div>
                     </div>
                     {{-- =======Exterior Color========== --}}
@@ -228,6 +242,10 @@
                         </select>
                     </div>
                     </div>
+
+
+
+
                     {{-- =======Interior Color========== --}}
                     <div class="form-group bmd-form-group">
                     <div class="input-group">
@@ -264,7 +282,7 @@
                             <i class="fa fa-window-close" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input  required type="number" name="door" id=""  class="form-control" placeholder="*Door">
+                        <input  required type="number" name="door" id=""  class="form-control" placeholder="*Door" value="{{$post->door}}">
                     </div>
                     </div>
 
@@ -276,7 +294,7 @@
                                 <i class="fa fa-cogs" aria-hidden="true"></i>
                         </span>
                         </div>
-                        <input  required type="number" name="Cylinder" id=""  class="form-control" placeholder="*Cylinders">
+                        <input  required type="number" name="Cylinder" id=""  class="form-control" placeholder="*Cylinders" value="{{$post->Cylinder}}">
 
                     </div>
                     </div>
@@ -359,7 +377,7 @@
                 {{-- ====Price========= --}}
                 <div class="form-group bmd-form-group">
                     <label for="exampleInput1" class="bmd-label-floating">*Enter Price</label>
-                    <input  required name="price" type="number" class="form-control" placeholder="$" >
+                    <input  required name="price" type="number" class="form-control" placeholder="$" value="{{$post->price}}">
                     <span class="bmd-help">Price/Description.</span>
                 </div>
             </div>
@@ -373,7 +391,7 @@
                 <div class="card-body">
                     <div class="form-group bmd-form-group">
                         <label for="exampleInput1" class="bmd-label-floating">Enter Description (optional)</label>
-                        <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
+                        <textarea class="form-control" name="description" id="" cols="30" rows="10">{{$post->description}}</textarea>
                         <span class="bmd-help">Enter Description (optional)</span>
                     </div>
 
@@ -742,6 +760,14 @@
 </div>
 
 <script>
+        document.forms['caredit'].elements['make'].value = '{{$post->make}}';
+        document.forms['caredit'].elements['transmission'].value = '{{$post->transmission}}';
+        document.forms['caredit'].elements['out_color'].value = '{{$post->out_color}}';
+        document.forms['caredit'].elements['in_color'].value = '{{$post->in_color}}';
+        document.forms['caredit'].elements['drive_type'].value = '{{$post->drive_type}}';
+        document.forms['caredit'].elements['fuel'].value = '{{$post->fuel}}';
+        document.forms['caredit'].elements['alt_fuel'].value = '{{$post->alt_fuel}}';
+
         function bType(v){
             $('#body-type').val(v);
         }
@@ -767,6 +793,8 @@
 
             }
     
-        {{-- =======car model========== --}}
+        {{-- =======car model end========== --}}
+
+
 </script>
 @endsection

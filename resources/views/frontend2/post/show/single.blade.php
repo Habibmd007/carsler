@@ -40,7 +40,7 @@
         <div class="row">
             <div class="col-md-3" style="background:#c7c7ce">
 
-                <p class="text-primary">Sold by: Mancuso Motorsports</p>
+                <p class="text-primary">Sold by: {{$post->user->first_name .' '. $post->user->last_name}}</p>
                 <div class="text-primary">
                     <span class="fa fa-star checked "></span>
                     <span class="fa fa-star checked"></span>
