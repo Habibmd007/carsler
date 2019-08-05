@@ -135,18 +135,45 @@ class PostController extends Controller
   
     public function edit($id)
     {
-        //
+        $post = Car::find($id);
+        $atribute= Car_attribute::find($id);
+        return view('frontend2.post.edit.editCar', compact('post', 'atribute'));
     }
 
  
     public function update(Request $request, $id)
     {
-        //
+       $car=new Car();
+       $car->body_type = $request->body_type;
+       $car->condition = $request->condition;
+       $car->make = $request->make;
+       $car->model = $request->model;
+       $car->edition = $request->edition;
+       $car->transmission = $request->transmission;
+       $car->mileage = $request->mileage;
+       $car->out_color = $request->out_color;
+       $car->in_color = $request->in_color;
+       $car->door = $request->door;
+       $car->Cylinder = $request->Cylinder;
+       $car->drive_type = $request->drive_type;
+       $car->fuel = $request->fuel;
+       $car->alt_fuel = $request->alt_fuel;
+       $car->price = $request->price;
+       $car->description = $request->description;
+       $car->save();
     }
 
 
-    public function destroy($id)
+    public function delete($id)
     {
         //
+    }
+
+    public function active($id)
+    {
+        $posts= Car::find($id);
+        $posts->active = $posts->active==1 ? 0:1;
+        $posts->save();
+        return redirect()->back()->with('msg', 'Publication status Updated succsessfully');
     }
 }

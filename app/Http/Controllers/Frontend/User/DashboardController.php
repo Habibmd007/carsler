@@ -15,7 +15,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $post = new Car();
-        return view('frontend2.user.dashboard');
+        $posts = Car::where('user_id', auth()->user()->id)->latest()->get();
+        // return $posts;
+        return view('frontend2.user.dashboard', compact('posts'));
     }
+
 }

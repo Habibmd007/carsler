@@ -180,7 +180,8 @@
 
         
 {{--  ==========Main Content=============  --}}
-        <div class="main main-raised" style="background:#9c27b070">
+        {{-- <div class="main main-raised" style="background:#9c27b070"> --}}
+        <div class="main main-raised">
           
           {{--  @include('includes.partials.messages')  --}}
           

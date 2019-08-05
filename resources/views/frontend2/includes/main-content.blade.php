@@ -1,6 +1,6 @@
 <div class="section section-basic">
 
-    {{--  ==================  --}}
+    {{--  ========home page==========  --}}
       <div class="container-fluid">
           <div class="row">
               <div class="col-md-12">
@@ -130,7 +130,7 @@
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec elementum mauris. Praesent vehicula gravida dolor, ac efficitur sem sagittis.
                               </p>
                               <ul class="post-bar">
-                                  <<li><i class="fa fa-calendar"></i>10,200 KM</<li>
+                                  <li><i class="fa fa-calendar"></i>10,200 KM</<li>
                                   <li>
                                       <i class="fa fa-folder"></i>
                                       <a href="#">Mockup</a>
@@ -152,7 +152,7 @@
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec elementum mauris. Praesent vehicula gravida dolor, ac efficitur sem sagittis.
                               </p>
                               <ul class="post-bar">
-                                  <li> <i class="fa fa-tachometer"></i> 10,200 KM</li>
+                                  <li> <i class="fa fa-tachometer"></i> 10,200 KM </li>
                                   <li>
                                       <i class="fa fa-folder"></i>
                                       <a href="#">Mockup</a>
