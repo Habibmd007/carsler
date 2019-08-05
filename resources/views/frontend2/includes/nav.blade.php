@@ -23,7 +23,7 @@
                     Sale My Car
                 </a>
               </li> --}}
-              
+
               <li class="dropdown nav-item  nav-link ">
                 <a href="#" class="dropdown-toggle btn btn-outline-warning btn-round" data-toggle="dropdown">
                   <i class="material-icons">apps</i> Sale My Car
@@ -38,10 +38,10 @@
                     <i class="fa fa-motorcycle material-icons" aria-hidden="true"> </i> sell bike
                   </a>
                   <a href="" class="dropdown-item">
-                      <img class=" material-icons" src="http://localhost/carsler-2/public/frontend/carbody/rickshaw.svg" alt="" height="30"> sell rickshaw
+                  <img class=" material-icons" src="{{asset('/')}}frontend/carbody/rickshaw.svg" alt="" height="30"> sell rickshaw
                   </a>
                   <a href="" class="dropdown-item">
-                    <i class="fa fa-bicycle material-icons" aria-hidden="true"> </i> sell bicycle 
+                    <i class="fa fa-bicycle material-icons" aria-hidden="true"> </i> sell bicycle
                   </a>
                   <a href="" class="dropdown-item">
                     <i class="fa fa-ship material-icons" aria-hidden="true"> </i> sell boat
@@ -49,21 +49,21 @@
                   <a href="" class="dropdown-item">
                     <i class="fa fa-plane material-icons" aria-hidden="true"> </i> sell aircraft
                   </a>
-                  
 
-               
+
+
 
                 </div>
               </li>
               {{-- ============== --}}
-             
+
 
           @auth
             {{--  @if (Auth::user()->roles[0]->name==='administrator')  --}}
               <li class="nav-item"><a href="{{route('frontend.user.dashboard')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.user.dashboard')) }}"> @lang('navs.frontend.dashboard') </a></li>
             {{--  @endif  --}}
           @endauth
-            
+
          @guest
              <li class="nav-item"><a href="{{route('frontend.auth.login')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.auth.login')) }}">@lang('navs.frontend.login')</a></li>
 

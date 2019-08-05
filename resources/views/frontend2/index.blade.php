@@ -88,7 +88,7 @@
                   <a href="#">
                     <div class="shop">
                         <div class="shop-img">
-                            <img src="http://localhost/carsaler/public/new/./img/shop03.png" alt="" height="148">
+                            <img src="{{asset('/')}}frontend/img/shop03.png" alt="" height="148">
                         </div>
                         <div class="shop-body">
                             <h3>Accessories</h3>
@@ -101,7 +101,7 @@
                   <a href="#">
                     <div class="shop">
                         <div class="shop-img">
-                            <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                            <img src="{{asset('/')}}frontend/img/shop01.png" alt="" height="148">
                         </div>
                         <div class="shop-body">
                             <h3>Car<br>Rental</h3>
@@ -120,7 +120,7 @@
                 <a href="http://">
                   <div class="shop">
                       <div class="shop-img">
-                          <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                          <img src="{{asset('/')}}frontend/img/shop01.png" alt="" height="148">
                       </div>
                       <div class="shop-body">
                           <h3>Traffic<br>Update</h3>
@@ -130,7 +130,7 @@
                 <a href="#">
                   <div class="shop">
                       <div class="shop-img">
-                          <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                          <img src="{{asset('/')}}frontend/img/shop01.png" alt="" height="148">
                       </div>
                       <div class="shop-body">
                           <h3>Hire<br>a Driver</h3>
@@ -141,7 +141,7 @@
                 <a href="#">
                   <div class="shop">
                       <div class="shop-img">
-                          <img src="http://localhost/carsaler/public/new/./img/shop01.png" alt="" height="148">
+                          <img src="{{asset('/')}}frontend/img/shop01.png" alt="" height="148">
                       </div>
                       <div class="shop-body">
                           <h3>Hire<br>a Car</h3>
@@ -152,10 +152,10 @@
            <!--// side dbox right-->
       </div> <!---row --->
 
-       
+
 
     </div>
-    
+
 @endsection
 
 @section('content')
