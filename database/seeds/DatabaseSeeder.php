@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
+
 class DatabaseSeeder extends Seeder
 {
     use TruncateTable;
@@ -21,7 +22,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            AuthTableSeeder::class,
+            // AuthTableSeeder::class,
+            CarSeeder::class,
+            Car_atributeSeeder::class,
+            PhotoSeeder::class,
             ]);
 
         Model::reguard();
